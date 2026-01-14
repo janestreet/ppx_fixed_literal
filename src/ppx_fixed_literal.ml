@@ -36,8 +36,8 @@ let string_to_v loc s =
       let (_ : Fixed_literal.precision) = [%e pexp_variant ~loc name None] in
       [%e body]]
   in
-  (* Only the application node gets a real location, so when we ask merlin for
-     the type of the literal in the source, we get [Fixed.t], not [int]. *)
+  (* Only the application node gets a real location, so when we ask merlin for the type of
+     the literal in the source, we get [Fixed.t], not [int]. *)
   let function_expr =
     let name =
       Printf.sprintf "Fixed_literal.With_%i_decimals.of_int_exact_exn" decimals
